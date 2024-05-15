@@ -18,12 +18,12 @@ async def index() -> dict:
 
 
 # simulate long  processing task
-@app.get("/upload_videos")
+@app.get("/upload_video")
 async def upload_videoas() -> dict:
     await asyncio.sleep(1.5)
-    return {"message": 'Vedeo Uploaded'}
+    return {"message": 'Video Uploaded successfully'}
 
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
-    # produdction:❯  newrelic-admin run-program uvicorn main:app
+    # produdction:❯  newrelic-admin run-program uvicorn main:app --host 0.0.0.0 --port 80
